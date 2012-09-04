@@ -11,5 +11,5 @@ Then `mv scopy /usr/local/bin`
 ## Usage
 
 Simple.
-`scopy <file>`
-Copies the file to the location outlined in your script.
+`scopy <file> {directory}`
+Copies the file to the location outlined in your script, unless directory is supplied as well
