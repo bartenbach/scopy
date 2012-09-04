@@ -2,11 +2,20 @@
 
 #Change these variables to meet your setup
 
-#The user we're copying files to.  Could also be root.
+#The user we're copying files to.
 USER=swanson
-#The ip of the server.  In this case, I was copying files locally.
+#The ip of the server.
 SERVER=192.168.1.109
 #The target directory of the file/files.
-DIR=/home/swanson/Desktop/craftbukkit/plugins
+DIR=/home/swanson/vanilla1.3/plugins
 
-scp $1 $USER@$SERVER:$DIR
+if [ -z $1 ]
+    then
+    echo 'Usage: scopy <file> {directory}'
+    exit 1;
+elif [ -z $2 ]
+    then
+    scp $1 $USER@$SERVER:$DIR
+else
+    scp $1 $USER@$SERVER:$2
+fi
